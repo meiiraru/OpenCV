@@ -10,7 +10,7 @@ java {
 
 group = "com.github.meiiraru"
 version = "1.0.0"
-val mainClass = "hello_cinnamon.Main"
+val mainClass = "opencv.Main"
 
 //dependencies
 val cinnamonVersion = "0.5.5"
@@ -69,6 +69,8 @@ dependencies {
     lwjglModules.forEach {
         runtimeOnly("org.lwjgl:$it::$lwjglNatives")
     }
+
+    implementation("org.bytedeco:javacv-platform:1.5.14")
 }
 
 tasks.withType<JavaExec> {
