@@ -61,7 +61,8 @@ public class HelloColorConverterHSV {
         Mat sepiaImg = hsvImg.clone();
 
         Mat hueChannel = new Mat();
-        hsvChannels.get(0).convertTo(hueChannel, -1, 1, 20); //shift hue by 20 degrees
+        hsvChannels.get(0).convertTo(hueChannel, -1, 0, 0);
+        hueChannel.convertTo(hueChannel, -1, 1, 21 / 2.0);
         mergeChannels.put(0, hueChannel);
         mergeChannels.put(1, hsvChannels.get(1));
         mergeChannels.put(2, hsvChannels.get(2));
